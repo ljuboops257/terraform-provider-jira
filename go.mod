@@ -1,9 +1,9 @@
-module github.com/fourplusone/terraform-provider-jira
+module github.com/ljuboops257/terraform-provider-jira
 
 go 1.13
 
 require (
-	github.com/andygrunwald/go-jira v1.16.0
+	github.com/ljuboops257/go-jira v2.2.3
 	github.com/hashicorp/terraform-plugin-docs v0.13.0
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.22.0
 	github.com/pkg/errors v0.9.1

@@ -2,7 +2,7 @@ package jira
 
 import (
 	"fmt"
-	jira "github.com/andygrunwald/go-jira"
+	jira "github.com/ljuboops257/go-jira"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/pkg/errors"
 )
@@ -33,6 +33,12 @@ func resourceUser() *schema.Resource {
 				Type:     schema.TypeString,
 				Required: true,
 				ForceNew: true,
+			},
+			"products": &schema.Schema{
+				Type:     schema.TypeList,
+				Required: true,
+				ForceNew: true,
+				Default:  []interface{}{"jira-core"},
 			},
 			"display_name": &schema.Schema{
 				Type:             schema.TypeString,
@@ -87,6 +93,13 @@ func resourceUserCreate(d *schema.ResourceData, m interface{}) error {
 	if !ok {
 		user.DisplayName = user.Name
 	}
+
+	productsRaw := d.Get("products").([]interface{})
+	products := make([]string, len(productsRaw))
+	for i, v := range productsRaw {
+		products[i] = v.(string)
+	}
+	user.Products = products
 
 	createdUser, _, err := config.jiraClient.User.Create(user)
 
