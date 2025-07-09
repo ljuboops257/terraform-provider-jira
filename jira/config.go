@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"sync"
 
-	jira "github.com/andygrunwald/go-jira"
+	jira "github.com/ljuboops257/go-jira"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/pkg/errors"
 )

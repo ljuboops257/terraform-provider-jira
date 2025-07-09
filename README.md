@@ -1,8 +1,8 @@
 # terraform-provider-jira
 
-[![Build & Tests](https://github.com/fourplusone/terraform-provider-jira/actions/workflows/go.yml/badge.svg)](https://github.com/fourplusone/terraform-provider-jira/actions/workflows/go.yml)
+[![Build & Tests](https://github.com/ljuboops257/terraform-provider-jira/actions/workflows/go.yml/badge.svg)](https://github.com/ljuboops257/terraform-provider-jira/actions/workflows/go.yml)
 
-Terraform Provider for managing JIRA. (__[View on registry.terraform.io](https://registry.terraform.io/providers/fourplusone/jira/latest)__)
+Terraform Provider for managing JIRA. (__[View on registry.terraform.io](https://registry.terraform.io/providers/ljuboops257/jira/latest)__)
 
 ## Data Sources
 
@@ -50,7 +50,7 @@ Copy this code into yout terraform configuration file (for example `main.tf`)
 terraform {
   required_providers {
     jira = {
-      source = "fourplusone/jira"
+      source = "ljuboops257/jira"
       version = "0.1.16"
     }
   }
@@ -314,7 +314,7 @@ Clone repository to: `$HOME/development/terraform-providers/`
 
 ```sh
 $ mkdir -p $HOME/development/terraform-providers/; cd $HOME/development/terraform-providers/
-$ git clone git@github.com:fourplusone/terraform-provider-jira
+$ git clone git@github.com:ljuboops257/terraform-provider-jira
 ...
 ```
 
@@ -325,10 +325,10 @@ $ make build
 ```
 
 ## Testing
-Testing requires a JIRA instance. To set up a temporary, local JIRA instance you can use the [Docker Atlas](https://github.com/fourplusone/docker-atlas) container:
+Testing requires a JIRA instance. To set up a temporary, local JIRA instance you can use the [Docker Atlas](https://github.com/ljuboops257/docker-atlas) container:
 
 ```sh
-$ git clone https://github.com/fourplusone/docker-atlas
+$ git clone https://github.com/ljuboops257/docker-atlas
 $ cd docker-atlas
 $ docker build -f jira.dockerfile . -t jira-docker
 $ docker run --rm -t -p 2990:2990 jira-docker
@@ -351,3 +351,4 @@ This just showcases that you can pretty much Terraform anything!
 
 - Anubhav Mishra (anubhavmishra)
 - Matthias Bartelmess (fourplusone)
+- Ljubo Nikolic (ljubon)
