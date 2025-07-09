@@ -21,10 +21,10 @@ help: ## List targets & descriptions
 	@cat Makefile* | grep -E '^[a-zA-Z_-]+:.*?## .*$$' | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 deps: ## Download dependencies
-	go mod download
+	go1.13.7 mod download
 
 build: ## Build
-	go build .
+	go1.13.7 build .
 
 release: ## Build the go binaries for various platform
 	./scripts/release.sh
